@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Access Required</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: monospace;
+            text-align: center;
+            margin-top: 120px;
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            background: #111;
+            border: 1px solid #444;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background: #222;
+            border: 1px solid #555;
+            color: white;
+            cursor: pointer;
+        }
+        #secret {
+            display: none;
+            margin-top: 40px;
+            font-size: 20px;
+            color: #0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>ENTER PASSWORD</h2>
+    <input id="pw" type="text" placeholder="Password">
+    <button onclick="check()">Submit</button>
+
+    <div id="secret">
+        ACCESS GRANTED<br><br>
+        Your secret is: <b>PLACE YOUR SECRET HERE</b>
+    </div>
+
+    <script>
+        function check() {
+            const correct = "COIN"; // password set here
+            const input = document.getElementById("pw").value;
+
+            if (input === correct) {
+                document.getElementById("secret").style.display = "block";
+            } else {
+                alert("Incorrect password");
+            }
+        }
+    </script>
+
+</body>
+</html>
